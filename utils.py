@@ -6,8 +6,11 @@ def set_hyperlink(link):
 
 def return_clean_data(data_file):
     '''
+    PRE-CONDITIONS: - Data must be in an Excel file.
+                    - All column titles in the file must be on the same row, including all their corresponding subcategories (this is required for title mapping).
+                    
     Input: the data file's name ("hsp_data.xlsx"). 
-    Output: ready to use df.
+    Output: df containing MRI findings and search results.
     '''
 
     from IPython.display import display, HTML
@@ -60,10 +63,10 @@ def return_clean_data(data_file):
     # fix missing values values
     data = data.fillna('')
 
-    # Render DataFrame as HTML
+    # render DataFrame as HTML (?)
     #html = data.to_html(escape=False)
 
-    # Display HTML content
+    # display HTML content
     # display(HTML(html))
 
     return data
